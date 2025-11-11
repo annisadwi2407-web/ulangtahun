@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dari Adekkk untuk Abanggg 🎂</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1b1b2f, #2a2a72, #4b0082);
+      background-size: 300% 300%;
+      animation: gradient 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #f0e6ff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 0 0 15px #c6a2f7, 0 0 30px #a38dff;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    p {
+      font-size: 1.2em;
+      opacity: 0;
+      max-width: 700px;
+      line-height: 1.6;
+      margin: 5px auto;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .balloons, .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -120px;
+      width: 50px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: floatUp 10s ease-in infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 40px;
+      font-size: 1em;
+      opacity: 0.8;
+      animation: fadeIn 3s ease-in 8s forwards;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Selamat Ulang Tahun, Abanggg Sayaangg 🎂</h1>
+
+  <p style="animation-delay: 1s;">Hari ini ulang tahun Abanggg lagi...</p>
+  <p style="animation-delay: 2s;">Adekkk udahhh lama siapinn inii</p>
+  <p style="animation-delay: 3s;">sekarang Adekkk cuma bisa kasiii kataa' lewat inii.</p>
+  <p style="animation-delay: 4s;">Semoga Abanggg sehat, bahagia, dan dikelilingi orang orang baik dan hal-hal baik jugaa,</p>
+  <p style="animation-delay: 5s;">karena Abanggg pantas mendapatkannya sepenuh hati.</p>
+  <p style="animation-delay: 6s;">Adekkk mungkin nggaa bisaa kasii lebihh ke abanggg</p>
+  <p style="animation-delay: 7s;">tapi setiap kali Abanggg senyumm dekatt adekkk, adekkk jugaa ikutann senanggg liatt abangg gituuu.</p>
+ <p style="animation-delay: 5s;">sekalii lagiii happy birthday sayangggg.</p>
+  <footer>— Dari Adekkk yang cantikk dan imuttt kyuttt💌</footer>
+
+  <div class="balloons"></div>
+  <div class="confetti"></div>
+
+  <script>
+    // efek balon pelan
+    const colors = ["rgba(255,255,255,0.2)", "rgba(200,170,255,0.3)", "rgba(255,192,203,0.3)"];
+    const balloonContainer = document.querySelector('.balloons');
+
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      const size = Math.random() * 40 + 40;
+      balloon.style.width = size + 'px';
+      balloon.style.height = size * 1.2 + 'px';
+      balloon.style.left = Math.random() * 100 + '%';
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.animationDuration = (Math.random() * 6 + 6) + 's';
+      balloonContainer.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 12000);
+    }
+
+    setInterval(createBalloon, 900);
+
+    // efek confetti lembut
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.style.position = 'fixed';
+      confetti.style.top = '-10px';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.width = '6px';
+      confetti.style.height = '10px';
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.opacity = Math.random();
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+      confetti.style.animation = `fall ${Math.random() * 4 + 4}s linear`;
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 5000);
+    }
+
+    setInterval(createConfetti, 200);
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // pesan pembuka
+    setTimeout(() => {
+      alert("💌 Dari Adekkk: Selamat ulang tahun, Abanggg... semoga Abanggg selalu bahagia samaa adekkk yaaa 💫");
+    }, 1500);
+  </script>
+</body>
+</html>
